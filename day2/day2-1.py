@@ -31,14 +31,12 @@ def checkIfIncreasingOrDecreasingByCorrectAmount(array):
     return True
 
 sum = 0
-
-with open('dag2input.txt','r') as file:
+with open('input.txt','r') as file:
     for line in file.readlines():
         line = line.split("\n")[0]
         numbers = line.split(" ")
         
         if ((checkIfAllDecreasing(numbers) or checkIfAllIncreasing(numbers)) and checkIfIncreasingOrDecreasingByCorrectAmount(numbers)):
             sum += 1
-            print(numbers)
 
 print(sum)
