@@ -3,8 +3,11 @@ import re
 wholeLine = ""
 with open('input.txt', 'r') as file:
     for line in file:
-        wholeLine += line
+        for char in line:
+            if (char != "\n"):
+                wholeLine += char
 
+wholeLine = re.sub(r"don't\(\).*?(?=do\(\)|$)", '', wholeLine)
 regexSearchResult = re.findall(r'mul\([0-9]{1,3},[0-9]{1,3}\)',wholeLine)
 
 sum = 0
